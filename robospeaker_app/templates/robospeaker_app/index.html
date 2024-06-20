@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RoboSpeaker</title>
+</head>
+<body>
+    <h1>Welcome to Voice-Help</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="text">Enter what you want to speak:</label>
+        <input type="text" id="text" name="text">
+        <button type="submit">Speak</button>
+    </form>
+    {% if text %}
+        <p>You said: {{ text }}</p>
+    {% endif %}
+</body>
+</html>
